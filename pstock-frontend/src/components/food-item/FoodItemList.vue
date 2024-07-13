@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Food Items</h1>
-    <router-link to="/create" class="btn btn-primary">Add New Food Item</router-link>
+    <router-link to="/create" class="btn btn-primary mb-3">Add New Food Item</router-link>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
     <table class="table table-striped" v-if="!error">
       <thead>
@@ -20,8 +20,8 @@
           <td>{{ item.expiration_date }}</td>
           <td>{{ item.category }}</td>
           <td>
-            <router-link :to="{ name: 'FoodItemDetail', params: { id: item.id } }" class="btn btn-info">Details</router-link>
-            <router-link :to="{ name: 'FoodItemEdit', params: { id: item.id } }" class="btn btn-warning">Edit</router-link>
+            <router-link :to="{ name: 'Details', params: { id: item.id } }" class="btn btn-info">Details</router-link>
+            <router-link :to="{ name: 'Edit', params: { id: item.id } }" class="btn btn-warning">Edit</router-link>
             <button @click="deleteFoodItem(item.id)" class="btn btn-danger">Delete</button>
           </td>
         </tr>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import foodItemService from '../services/foodItemService';
+import foodItemService from '../../services/foodItemService';
 
 export default {
   name: 'FoodItemList',

@@ -32,7 +32,7 @@
 <script>
 import { required, minValue, date } from '@vuelidate/validators';
 import useVuelidate from '@vuelidate/core';
-import foodItemService from '../services/foodItemService';
+import foodItemService from '../../services/foodItemService';
 
 export default {
   name: 'FoodItemForm',
